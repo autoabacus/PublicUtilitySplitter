@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Public Utility Splitter</title>
+  <link href="./app.css" rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+</head>
+<body>
+  <h1>Public Utility Splitter</h1>
+  <h2>B9Lab Project by AutoAbacus version <span id=Version></span></h2>
+  <table>
+    <tr>
+      <th>Who</th>
+      <th>Address</th>
+      <th>Ethers Before</th>
+      <th>Ethers After</th>
+      <th>Ethers<br>to be Split</th>
+    </tr>
+    <tr>
+      <td class=tc>A</td>
+      <td><input id=AAddr type=text class=ai placeholder="e.g. 0xf48f44fe36cf93623b09cbf31e3b6154686d7a51"></input></td>
+      <td id=AAnte></td>
+      <td id=APost></td>
+      <td><input type=text id=AAmt placeholder="e.g. 10 or 5.5"></input></td>
+      <td><button id=SendBtn>Send</button></td>
+    </tr>
+    <tr>
+      <td class=tc>B</td>
+      <td><input id=BAddr type=text class=ai placeholder="e.g. 0xf48f44fe36cf93623b09cbf31e3b6154686d7a51"></input></td>
+      <td id=BAnte></td>
+      <td id=BPost></td>
+    </tr>
+    <tr>
+      <td class=tc>C</td>
+      <td><input id=CAddr type=text class=ai placeholder="e.g. 0xf48f44fe36cf93623b09cbf31e3b6154686d7a51"></input></td>
+      <td id=CAnte></td>
+      <td id=CPost></td>
+    </tr>
+  </table>
+  <br>
+
+  <button id=RefreshBtn title="Click to refresh the Ether columns balances above in case they were changed by another process.">Refresh Ether Balances</button>
+  <br><p><b>Status</b>: <em><span id=Status>Loading</span></em></p>
+  <div id=ErrorDiv class=hide><p><span class=error>Error:</span> <span id=Error></span></em></p></div>
+  <h3>Notes:</h3>
+  <ol>
+    <li>Ethers sent by A will be split 50/50 between B and C, using the pull pattern.</li>
+    <li>Decimal fractions of Ethers to be sent by A can be entered.</li>
+    <li>The buttons are disabled during processing.</li>
+    <li>Addresses and the Ethers to be split are checked for validity.</li>
+  </ol>
+</body>
+</html>
